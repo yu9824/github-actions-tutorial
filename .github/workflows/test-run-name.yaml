@@ -17,4 +17,5 @@ jobs:
     steps:
       - run: echo "Hello world!"
       - run: if [ ${{ inputs.variable }} ] ; then echo "true"; else echo "false"; fi
-      - run: if [ ${{ inputs.variable }} == "true" ] ; then echo "true"; else echo "false"; fi
+      - run: if [ ${{ inputs.variable }} == "true" ]; then echo "true"; else echo "false"; fi
+      - run: if [ ${{ inputs.variable }} == "true" ]; then echo "true"; elif [ ${{ inputs.variable }} == "false" ] ; then echo "false"; else echo "nothing"; fi
