@@ -1,0 +1,19 @@
+name: test-run-name
+run-name: ${{ github.actor }} is learning GitHub Actions
+on:
+  push:
+    paths:
+      - '.github/workflows/test-run-name.yaml'
+  workflow_dispatch:
+    inputs:
+      variable:
+        required: true
+        type: boolean
+
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world!"
+      - run: echo "${{ inputs.variable }}"
