@@ -16,8 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello world!"
-      - run: echo "${{ inputs.variable }}"
-      - run: echo "${{ inputs.variable }} == 'true'"
-      - run: echo "${{ inputs.variable }} == true"
-      - run: echo "${{ inputs.variable }} == 'false'"
-      - run: echo "${{ inputs.variable }} == false"
+      - run: echo ${{ inputs.variable }}
+      - run: echo [${{ inputs.variable }}]
+      - run: echo [${{ inputs.variable }} = 'true']
+      - run: echo [${{ inputs.variable }} = true]
+      - run: echo [${{ inputs.variable }} = 'false']
+      - run: echo [${{ inputs.variable }} = false]
