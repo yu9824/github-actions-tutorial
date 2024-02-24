@@ -16,4 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello world!"
-      - run: if [ ${{ inputs.variable }} ] ; then echo "true"; else echo false; fi
+      - run: if [ ${{ inputs.variable }} ] ; then echo "true"; else echo "false"; fi
+      - run: if [ ${{ inputs.variable }} == "true" ] ; then echo "true"; else echo "false"; fi
