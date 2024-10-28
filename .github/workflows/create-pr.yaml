@@ -23,3 +23,5 @@ jobs:
         --base main \
         --head feature/update-graphql-schema \
         --reviewer "${{ github.event.head_commit.committer.username || github.triggering_actor }}"
+    env:
+      GH_TOKEN: ${{ github.token }}
