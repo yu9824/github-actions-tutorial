@@ -17,9 +17,9 @@ jobs:
     - name: create Pull Request to another-repo
       run: |
         gh pr create \
-        --title "update GraphQL Schema file " \
-        --body "" \
-        --repo MyOrg/another-repo \
+        --title "Test PR " \
+        --body "body" \
+        --repo yu9824/mymemo \
         --base main \
         --head feature/update-graphql-schema \
         --reviewer "${{ github.event.head_commit.committer.username || github.triggering_actor }}"
