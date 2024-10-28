@@ -10,8 +10,12 @@ on:
 
 jobs:
   create-pr:
+    name: create pr
+    runs-on: ubuntu-latest
+    
+    steps:
     - name: create Pull Request to another-repo
-    run: |
+      run: |
         gh pr create \
         --title "update GraphQL Schema file " \
         --body "" \
