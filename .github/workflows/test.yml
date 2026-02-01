@@ -26,11 +26,11 @@ jobs:
         activate-environment: ${{ env.CONDA_ENV }}
     - name: Install conda optional dependencies
       run: |
-        conda install -c conda-forge -n ${{ env.CONDA_ENV }} -y ambertools
+        mamba install -c conda-forge -n ${{ env.CONDA_ENV }} -y ambertools
     # - run: conda activate ${{ env.CONDA_ENV }}
-    - run: conda info -e
-    - run: conda run -n ${{ env.CONDA_ENV }} python --version
-    - run: conda run -n ${{ env.CONDA_ENV }} python3 --version
-    - run: conda run -n ${{ env.CONDA_ENV }} python3 -m pip install jupytext
-    - run: conda list -n ${{ env.CONDA_ENV }}
-    - run: conda run -n ${{ env.CONDA_ENV }} python3 --version
+    - run: mamba info -e
+    - run: mamba run -n ${{ env.CONDA_ENV }} python --version
+    - run: mamba run -n ${{ env.CONDA_ENV }} python3 --version
+    - run: mamba run -n ${{ env.CONDA_ENV }} python3 -m pip install jupytext
+    - run: mamba list -n ${{ env.CONDA_ENV }}
+    - run: mamba run -n ${{ env.CONDA_ENV }} python3 --version
