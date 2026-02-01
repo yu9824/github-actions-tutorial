@@ -26,4 +26,6 @@ jobs:
         conda install -c conda-forge -n test -y ambertools
     - run: conda info -e
     - run: conda list
+    - run: conda run -n test antechamber
+    - run: conda activate test
     - run: which antechamber
