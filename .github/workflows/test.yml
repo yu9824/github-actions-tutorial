@@ -20,7 +20,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v3
       with:
         miniforge-version: latest
-        python-version: 3.14
+        python-version: 3.13
         auto-activate: true
         channels: conda-forge
         activate-environment: ${{ env.CONDA_ENV }}
