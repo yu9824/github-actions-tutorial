@@ -17,11 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup Miniforge
-      uses: conda-incubator/setup-miniconda@v2
+      uses: conda-incubator/setup-miniconda@v3
       with:
         miniforge-version: latest
         python-version: 3.14
-        # auto-activate-base: false
+        auto-activate: true
         channels: conda-forge
         activate-environment: ${{ env.CONDA_ENV }}
     - name: Install conda optional dependencies
@@ -29,6 +29,8 @@ jobs:
         conda install -c conda-forge -n ${{ env.CONDA_ENV }} -y ambertools
     # - run: conda activate ${{ env.CONDA_ENV }}
     - run: conda info -e
-    - run: conda list -n ${{ env.CONDA_ENV }}
+    - run: conda run -n ${{ env.CONDA_ENV }} python --version
+    - run: conda run -n ${{ env.CONDA_ENV }} python3 --version
     - run: conda run -n ${{ env.CONDA_ENV }} python3 -m pip install jupytext
+    - run: conda list -n ${{ env.CONDA_ENV }}
     - run: conda run -n ${{ env.CONDA_ENV }} python3 --version
