@@ -10,6 +10,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      CONDA_ENV: test
 
     steps:
     - uses: actions/checkout@v4
@@ -20,12 +22,11 @@ jobs:
         python-version: 3.12
         auto-activate-base: false
         channels: conda-forge
-        # activate-environment: test  # env name
+        activate-environment: ${{ env.CONDA_ENV }}
     - name: Install conda optional dependencies
       run: |
-        conda install -c conda-forge -n test -y ambertools
+        conda install -c conda-forge -n ${{ env.CONDA_ENV }} -y ambertools
+    - run: conda activate ${{ env.CONDA_ENV }}
     - run: conda info -e
     - run: conda list
-    - run: conda run -n test antechamber
-    - run: conda activate test
     - run: which antechamber
