@@ -32,7 +32,8 @@ jobs:
     - run: conda run -n ${{ env.CONDA_ENV }} python3 -m pip install jupytext
     - run: conda list -n ${{ env.CONDA_ENV }}
     - run: conda run -n ${{ env.CONDA_ENV }} python3 --version
-    - run: conda activate ${{ env.CONDA_ENV }}
+    # - run: conda activate ${{ env.CONDA_ENV }}
+    - run: mamba activate ${{ env.CONDA_ENV }}
     - run: conda info -e
     - run: which python3
     - run: python3 --version
