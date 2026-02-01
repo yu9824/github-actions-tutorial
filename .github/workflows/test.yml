@@ -5,6 +5,7 @@ run-name: ${{ github.workflow }} (${{ github.ref_name }})
 
 on:
   workflow_dispatch:
+  push:
 
 
 jobs:
@@ -19,7 +20,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniforge-version: latest
-        python-version: 3.12
+        python-version: 3.14
         # auto-activate-base: false
         channels: conda-forge
         activate-environment: ${{ env.CONDA_ENV }}
@@ -29,4 +30,5 @@ jobs:
     # - run: conda activate ${{ env.CONDA_ENV }}
     - run: conda info -e
     - run: conda list
-    - run: which antechamber
+    - run: conda run -n ${{ env.CONDA_ENV }} python3 -m pip install jupytext
+    - run: conda run -n python3 --version
