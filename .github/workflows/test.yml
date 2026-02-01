@@ -20,7 +20,7 @@ jobs:
         python-version: 3.12
         auto-activate-base: false
         channels: conda-forge
-        activate-environment: test  # env name
+        # activate-environment: test  # env name
     - name: Install conda optional dependencies
       run: |
         conda install -c conda-forge -n test -y ambertools
