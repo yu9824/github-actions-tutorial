@@ -20,13 +20,13 @@ jobs:
       with:
         miniforge-version: latest
         python-version: 3.12
-        auto-activate-base: false
+        # auto-activate-base: false
         channels: conda-forge
         activate-environment: ${{ env.CONDA_ENV }}
     - name: Install conda optional dependencies
       run: |
         conda install -c conda-forge -n ${{ env.CONDA_ENV }} -y ambertools
-    - run: conda activate ${{ env.CONDA_ENV }}
+    # - run: conda activate ${{ env.CONDA_ENV }}
     - run: conda info -e
     - run: conda list
     - run: which antechamber
