@@ -29,6 +29,6 @@ jobs:
         conda install -c conda-forge -n ${{ env.CONDA_ENV }} -y ambertools
     # - run: conda activate ${{ env.CONDA_ENV }}
     - run: conda info -e
-    - run: conda list
+    - run: conda list -n ${{ env.CONDA_ENV }}
     - run: conda run -n ${{ env.CONDA_ENV }} python3 -m pip install jupytext
-    - run: conda run -n python3 --version
+    - run: conda run -n ${{ env.CONDA_ENV }} python3 --version
